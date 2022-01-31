@@ -80,6 +80,8 @@ user_count = 0
 x = []
 y = []
 
+plt.figure(figsize=(12,5))
+
 for user in total_dict:
 
     if user_count < 5:
@@ -94,7 +96,10 @@ for user in total_dict:
                 x.append(date)
                 y.append(total_dict[user][date])
 
-        plt.plot(x,y)
+        
+        line = plt.plot(x,y)
+        plt.text(x[0], y[0], user, color=line[0].get_color())
+        plt.autoscale()
         x = []
         y = []
         
