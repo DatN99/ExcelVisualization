@@ -10,9 +10,6 @@ with open("./layer0_paper.json") as file:
 fname = "output.csv"
 
 
-
-
-
 top10_dict = {}
 pub_list = []
 for content in data:
@@ -33,7 +30,7 @@ for content in data:
     temp.append(" " + str(content["Id"]))
     temp.append(content["Ti"])
     temp.append(" " + content["D"])
-    temp.append(author_str)
+    temp.append(author_str[:-1])
     pub_list.append(temp)
     
 
@@ -48,9 +45,6 @@ plt.xticks(rotation = 50, fontsize=4)
 plt.autoscale()
 plt.show()
 
-#for i in range(len(top10_list)):
-#    print(top10_dict[top10_list[i]])
-
 
 with open(fname, "w") as file:
     csv_file = csv.writer(file)
@@ -59,10 +53,3 @@ with open(fname, "w") as file:
 df = pd.DataFrame(pub_list, columns = ["paperID", "paper title", "publish years", "authors"])
 df.to_csv('./output.csv', index=False)
 
-
-'''
-        for item in content["AA"]:
-
-            print(item)
-            csv_file.writerow([item['AuId']])
-'''

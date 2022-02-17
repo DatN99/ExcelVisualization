@@ -27,19 +27,7 @@ for user in users:
         top10_dict[user] = 1
 
 
-top10_list = sorted(top10_dict, key=top10_dict.get, reverse=True)[:10]
-
-#print(top10_dict[top10_list[0]])
-#print(top10_dict[top10_list[1]])
-#print(top10_dict[top10_list[2]])
-#print(top10_dict[top10_list[3]])
-#print(top10_dict[top10_list[4]])
-#print(top10_dict[top10_list[5]])
-#print(top10_dict[top10_list[6]])
-#print(top10_dict[top10_list[7]])
-#print(top10_dict[top10_list[8]])
-#print(top10_dict[top10_list[9]])
-#print("\n")
+top10_list = sorted(top10_dict, key=top10_dict.get, reverse=True)[0:10]
 
 
 
